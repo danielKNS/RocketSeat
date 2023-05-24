@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Comment.module.css";
-import { Trash } from "@phosphor-icons/react";
+import { ThumbsUp, Trash } from "@phosphor-icons/react";
 
 const Comment = () => {
   return (
@@ -25,7 +25,13 @@ const Comment = () => {
           <p>Very good Devon, congrats!!</p>
         </div>
 
-        <footer>Like</footer>
+        <footer>
+          <button>
+            <ThumbsUp size={20} />
+            Like
+            <span>20</span>
+          </button>
+        </footer>
       </div>
     </div>
   );
