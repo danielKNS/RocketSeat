@@ -94,6 +94,7 @@
   border-radius: 8px;
   color: var(--gray-100);
   line-height: 1.4;
+  margin-top: 1rem;
 }
 /* This makes the button invisible and make sure we are not taking up space */
 .commentForm footer {
