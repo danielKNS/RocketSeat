@@ -27,7 +27,7 @@ const Comment = () => {
 
         <footer>
           <button>
-            <ThumbsUp size={20} />
+            <ThumbsUp />
             Like
             <span>20</span>
           </button>
