@@ -7,3 +7,12 @@
   gap: 2rem;
   align-items: flex-start;
 }
+/* // fixing the style/grid for mobile devices */
+@media (max-width: 768px) {
+  html {
+    font-size: 87.5%;
+  }
+  .wrapper {
+    grid-template-columns: 1fr;
+  }
+}
