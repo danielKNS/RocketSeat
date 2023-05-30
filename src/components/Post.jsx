@@ -46,7 +46,7 @@ const Post = () => {
       </form>
 
       {/* //List of Comments */}
-      <div clasName={styles.commentList}>
+      <div className={styles.commentList}>
         <Comment />
         <Comment />
         <Comment />
