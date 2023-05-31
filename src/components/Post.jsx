@@ -3,22 +3,27 @@ import styles from "./Post.module.css";
 import Comment from "./Comment";
 import Avatar from "./Avatar";
 
-const Post = (props) => {
-  console.log(props);
-
+// this is called destructuring
+const Post = ({ author, publishedAt }) => {
+  const publishedDateFormatted = new Intl.DateTimeFormat("en-US", {
+    day: "2-digit",
+    month: "long",
+    hour: "2-digit",
+    minute: "2-digit",
+  }).format(publishedAt);
   return (
     <article className={styles.post}>
       <header>
         <div className={styles.author}>
-          <Avatar hasBorder src="https://github.com/maykbrito.png" />
+          <Avatar hasBorder src={author.avatarUrl} />
           <div className={styles.authorInfo}>
-            <strong> Diego Fernandes </strong>
-            <span> Web Developer </span>
+            <strong>{author.name}</strong>
+            <span>{author.role}</span>
           </div>
         </div>
 
         <time title="11 of May at 8:30" dateTime="2023-05-11">
-          Published in 1h
+          {publishedDateFormatted}
         </time>
       </header>
 
