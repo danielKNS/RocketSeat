@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./Post.module.css";
 import Comment from "./Comment";
 import Avatar from "./Avatar";
-import { format } from "date-fns";
+import { format, formatDistanceToNow } from "date-fns";
 import enUS from "date-fns/locale/en-US";
 
 // this is called destructuring
@@ -12,6 +12,11 @@ const Post = ({ author, publishedAt }) => {
     "d 'of' LLLL 'at' HH:mm'h' ",
     { locale: enUS }
   );
+
+  const publishedDateRelativeToNow = formatDistanceToNow(publishedAt, {
+    locale: enUS,
+    addSuffix: true,
+  });
   return (
     <article className={styles.post}>
       <header>
@@ -23,8 +28,8 @@ const Post = ({ author, publishedAt }) => {
           </div>
         </div>
 
-        <time title="11 of May at 8:30" dateTime="2023-05-11">
-          {publishedDateFormatted}
+        <time title={publishedDateFormatted} dateTime="2023-05-11">
+          {publishedDateRelativeToNow}
         </time>
       </header>
 
