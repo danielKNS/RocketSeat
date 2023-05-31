@@ -2,15 +2,16 @@ import React from "react";
 import styles from "./Post.module.css";
 import Comment from "./Comment";
 import Avatar from "./Avatar";
+import { format } from "date-fns";
+import enUS from "date-fns/locale/en-US";
 
 // this is called destructuring
 const Post = ({ author, publishedAt }) => {
-  const publishedDateFormatted = new Intl.DateTimeFormat("en-US", {
-    day: "2-digit",
-    month: "long",
-    hour: "2-digit",
-    minute: "2-digit",
-  }).format(publishedAt);
+  const publishedDateFormatted = format(
+    publishedAt,
+    "d 'of' LLLL 'at' HH:mm'h' ",
+    { locale: enUS }
+  );
   return (
     <article className={styles.post}>
       <header>
