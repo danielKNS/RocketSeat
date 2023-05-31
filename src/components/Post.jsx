@@ -28,7 +28,10 @@ const Post = ({ author, publishedAt }) => {
           </div>
         </div>
 
-        <time title={publishedDateFormatted} dateTime="2023-05-11">
+        <time
+          title={publishedDateFormatted}
+          dateTime={publishedAt.toISOString()}
+        >
           {publishedDateRelativeToNow}
         </time>
       </header>
