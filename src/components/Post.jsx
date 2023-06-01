@@ -24,7 +24,7 @@ const Post = ({ author, publishedAt, content }) => {
   const handleCreateNewComment = () => {
     event.preventDefault();
 
-    setComments([1, 2, 3]);
+    setComments([...comments, comments.length + 1]);
 
     console.log(comments);
   };
