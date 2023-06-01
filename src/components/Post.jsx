@@ -6,10 +6,10 @@ import Avatar from "./Avatar";
 import { format, formatDistanceToNow } from "date-fns";
 import enUS from "date-fns/locale/en-US";
 
-const comments = [1, 2];
-
 // this is called destructuring
 const Post = ({ author, publishedAt, content }) => {
+  const [comments, setComments] = useState([1, 2]);
+
   const publishedDateFormatted = format(
     publishedAt,
     "d 'of' LLLL 'at' HH:mm'h' ",
@@ -24,7 +24,7 @@ const Post = ({ author, publishedAt, content }) => {
   const handleCreateNewComment = () => {
     event.preventDefault();
 
-    comments.push(3);
+    setComments([1, 2, 3]);
 
     console.log(comments);
   };
