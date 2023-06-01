@@ -1,9 +1,12 @@
 import React from "react";
+import { useState } from "react";
 import styles from "./Post.module.css";
 import Comment from "./Comment";
 import Avatar from "./Avatar";
 import { format, formatDistanceToNow } from "date-fns";
 import enUS from "date-fns/locale/en-US";
+
+const comments = [1, 2];
 
 // this is called destructuring
 const Post = ({ author, publishedAt, content }) => {
@@ -17,6 +20,15 @@ const Post = ({ author, publishedAt, content }) => {
     locale: enUS,
     addSuffix: true,
   });
+
+  const handleCreateNewComment = () => {
+    event.preventDefault();
+
+    comments.push(3);
+
+    console.log(comments);
+  };
+
   return (
     <article className={styles.post}>
       <header>
@@ -50,7 +62,7 @@ const Post = ({ author, publishedAt, content }) => {
         })}
       </div>
 
-      <form className={styles.commentForm}>
+      <form onSubmit={handleCreateNewComment} className={styles.commentForm}>
         <strong>Leave your comment</strong>
 
         <textarea placeholder="Write your comment" />
@@ -62,9 +74,9 @@ const Post = ({ author, publishedAt, content }) => {
 
       {/* //List of Comments */}
       <div className={styles.commentList}>
-        <Comment />
-        <Comment />
-        <Comment />
+        {comments.map((comment) => {
+          return <Comment />;
+        })}
       </div>
     </article>
   );
