@@ -8,7 +8,7 @@ import enUS from "date-fns/locale/en-US";
 
 // this is called destructuring
 const Post = ({ author, publishedAt, content }) => {
-  const [comments, setComments] = useState([1, 2]);
+  const [comments, setComments] = useState(["post muito bacana, hein ?"]);
 
   const publishedDateFormatted = format(
     publishedAt,
@@ -23,6 +23,9 @@ const Post = ({ author, publishedAt, content }) => {
 
   const handleCreateNewComment = () => {
     event.preventDefault();
+
+    // const newCommentText =
+    console.log(event.target.comment.value);
 
     setComments([...comments, comments.length + 1]);
 
@@ -65,7 +68,7 @@ const Post = ({ author, publishedAt, content }) => {
       <form onSubmit={handleCreateNewComment} className={styles.commentForm}>
         <strong>Leave your comment</strong>
 
-        <textarea placeholder="Write your comment" />
+        <textarea name="comment" placeholder="Write your comment" />
 
         <footer>
           <button type="submit">Publish</button>
@@ -75,7 +78,7 @@ const Post = ({ author, publishedAt, content }) => {
       {/* //List of Comments */}
       <div className={styles.commentList}>
         {comments.map((comment) => {
-          return <Comment />;
+          return <Comment content={comment} />;
         })}
       </div>
     </article>
