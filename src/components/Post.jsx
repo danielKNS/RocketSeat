@@ -24,11 +24,15 @@ const Post = ({ author, publishedAt, content }) => {
   const handleCreateNewComment = () => {
     event.preventDefault();
 
-    // const newCommentText =
-    console.log(event.target.comment.value);
+    const newCommentText = event.target.comment.value;
+    // console.log("new Comment");
+    console.log(newCommentText);
+    // console.log("Event Comment");
+    // console.log(event.target.comment.value);
 
-    setComments([...comments, comments.length + 1]);
+    setComments([...comments, newCommentText.trim()]);
 
+    // console.log("Comment");
     console.log(comments);
   };
 
