@@ -32,7 +32,8 @@ const Post = ({ author, publishedAt, content }) => {
   };
 
   const handleNewCommentChange = () => {
-    console.log("test");
+    //getting value from input
+    console.log(event.target.value);
   };
 
   return (
