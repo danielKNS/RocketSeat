@@ -27,13 +27,13 @@ const Post = ({ author, publishedAt, content }) => {
     event.preventDefault();
 
     setComments([...comments, newCommentText.trim()]);
+    setNewCommentText("");
 
     console.log(comments);
   };
 
   const handleNewCommentChange = () => {
-    //getting value from input
-    console.log(event.target.value);
+    setNewCommentText(event.target.value);
   };
 
   return (
@@ -75,6 +75,7 @@ const Post = ({ author, publishedAt, content }) => {
         <textarea
           name="comment"
           placeholder="Write your comment"
+          value={newCommentText}
           onChange={handleNewCommentChange}
         />
 
