@@ -32,6 +32,8 @@ const Post = ({ author, publishedAt, content }) => {
 
     setComments([...comments, newCommentText.trim()]);
 
+    //getting the value and putting as empty string
+    event.target.comment.value = "";
     // console.log("Comment");
     console.log(comments);
   };
