@@ -10,6 +10,8 @@ import enUS from "date-fns/locale/en-US";
 const Post = ({ author, publishedAt, content }) => {
   const [comments, setComments] = useState(["post muito bacana, hein ?"]);
 
+  const [newCommentText, setNewCommentText] = useState("");
+
   const publishedDateFormatted = format(
     publishedAt,
     "d 'of' LLLL 'at' HH:mm'h' ",
@@ -24,18 +26,13 @@ const Post = ({ author, publishedAt, content }) => {
   const handleCreateNewComment = () => {
     event.preventDefault();
 
-    const newCommentText = event.target.comment.value;
-    // console.log("new Comment");
-    console.log(newCommentText);
-    // console.log("Event Comment");
-    // console.log(event.target.comment.value);
-
     setComments([...comments, newCommentText.trim()]);
 
-    //getting the value and putting as empty string
-    event.target.comment.value = "";
-    // console.log("Comment");
     console.log(comments);
+  };
+
+  const handleNewCommentChange = () => {
+    console.log("test");
   };
 
   return (
@@ -74,7 +71,11 @@ const Post = ({ author, publishedAt, content }) => {
       <form onSubmit={handleCreateNewComment} className={styles.commentForm}>
         <strong>Leave your comment</strong>
 
-        <textarea name="comment" placeholder="Write your comment" />
+        <textarea
+          name="comment"
+          placeholder="Write your comment"
+          onChange={handleNewCommentChange}
+        />
 
         <footer>
           <button type="submit">Publish</button>
