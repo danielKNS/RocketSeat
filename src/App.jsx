@@ -54,6 +54,7 @@ const App = () => {
           {posts.map((posts) => {
             return (
               <Post
+                key={posts.id}
                 author={posts.author}
                 content={posts.content}
                 publishedAt={posts.publishedAt}
