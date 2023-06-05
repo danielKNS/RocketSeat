@@ -33,6 +33,7 @@ const Post = ({ author, publishedAt, content }) => {
   };
 
   const handleNewCommentChange = () => {
+    event.target.setCustomValidity("");
     setNewCommentText(event.target.value);
   };
   const deleteComment = (commentToDelete) => {
@@ -41,6 +42,10 @@ const Post = ({ author, publishedAt, content }) => {
       return comment !== commentToDelete;
     });
     setComments(commentsWithoudDeletedOne);
+  };
+
+  const handleNewCommentInvalid = () => {
+    event.target.setCustomValidity("this field is mandatory");
   };
 
   return (
@@ -84,6 +89,8 @@ const Post = ({ author, publishedAt, content }) => {
           placeholder="Write your comment"
           value={newCommentText}
           onChange={handleNewCommentChange}
+          onInvalid={handleNewCommentInvalid}
+          required
         />
 
         <footer>
