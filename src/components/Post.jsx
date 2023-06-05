@@ -35,8 +35,12 @@ const Post = ({ author, publishedAt, content }) => {
   const handleNewCommentChange = () => {
     setNewCommentText(event.target.value);
   };
-  const deleteComment = (comment) => {
-    console.log(`Delete comment ${comment}`);
+  const deleteComment = (commentToDelete) => {
+    // this is imutabilidade/immutability
+    const commentsWithoudDeletedOne = comments.filter((comment) => {
+      return comment !== commentToDelete;
+    });
+    setComments(commentsWithoudDeletedOne);
   };
 
   return (
