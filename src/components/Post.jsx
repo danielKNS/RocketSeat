@@ -35,6 +35,9 @@ const Post = ({ author, publishedAt, content }) => {
   const handleNewCommentChange = () => {
     setNewCommentText(event.target.value);
   };
+  const deleteComment = (comment) => {
+    console.log(`Delete comment ${comment}`);
+  };
 
   return (
     <article className={styles.post}>
@@ -87,7 +90,13 @@ const Post = ({ author, publishedAt, content }) => {
       {/* //List of Comments */}
       <div className={styles.commentList}>
         {comments.map((comment) => {
-          return <Comment key={comment} content={comment} />;
+          return (
+            <Comment
+              key={comment}
+              content={comment}
+              deleteComment={deleteComment}
+            />
+          );
         })}
       </div>
     </article>
