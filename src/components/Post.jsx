@@ -48,6 +48,8 @@ const Post = ({ author, publishedAt, content }) => {
     event.target.setCustomValidity("this field is mandatory");
   };
 
+  const isNewCommentEmpty = newCommentText.length === 0;
+
   return (
     <article className={styles.post}>
       <header>
@@ -94,7 +96,9 @@ const Post = ({ author, publishedAt, content }) => {
         />
 
         <footer>
-          <button type="submit">Publish</button>
+          <button type="submit" disabled={isNewCommentEmpty}>
+            Publish
+          </button>
         </footer>
       </form>
 
