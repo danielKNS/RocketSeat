@@ -10,7 +10,9 @@ const Comment = ({ content, deleteComment }) => {
   };
 
   const handleLikeComment = () => {
-    setLikeCount(likeCount + 1);
+    setLikeCount((state) => {
+      return state + 1;
+    });
   };
   return (
     <div className={styles.comment}>
