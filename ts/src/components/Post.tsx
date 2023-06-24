@@ -1,4 +1,4 @@
-import React, { ChangeEvent, FormEvent } from "react";
+import React, { ChangeEvent, FormEvent, InvalidEvent } from "react";
 import { useState } from "react";
 import styles from "./Post.module.css";
 import Comment from "./Comment";
@@ -12,10 +12,15 @@ interface Author {
   avatarUrl: string;
 }
 
+interface Content {
+  type: "paragraph" | "link";
+  content: string;
+}
+
 interface PostProps {
   author: Author;
   publishedAt: Date;
-  content: string;
+  content: Content[];
 }
 
 // this is called destructuring
@@ -48,7 +53,7 @@ const Post = ({ author, publishedAt, content }: PostProps) => {
     event.target.setCustomValidity("");
     setNewCommentText(event.target.value);
   };
-  const deleteComment = (commentToDelete) => {
+  const deleteComment = (commentToDelete: string) => {
     // this is imutabilidade/immutability
     const commentsWithoudDeletedOne = comments.filter((comment) => {
       return comment !== commentToDelete;
@@ -56,7 +61,9 @@ const Post = ({ author, publishedAt, content }: PostProps) => {
     setComments(commentsWithoudDeletedOne);
   };
 
-  const handleNewCommentInvalid = (event) => {
+  const handleNewCommentInvalid = (
+    event: InvalidEvent<HTMLTextAreaElement>
+  ) => {
     event.target.setCustomValidity("this field is mandatory");
   };
 
