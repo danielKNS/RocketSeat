@@ -1,7 +1,12 @@
-import React from "react";
 import styles from "./Avatar.module.css";
 
-const Avatar = ({ hasBorder = true, src }) => {
+interface AvatarProps {
+  hasBorder?: boolean;
+  src: string;
+  alt?: string;
+}
+
+const Avatar = ({ hasBorder = true, src }: AvatarProps) => {
   return (
     <img
       className={hasBorder ? styles.avatarWithBorder : styles.avatar}
