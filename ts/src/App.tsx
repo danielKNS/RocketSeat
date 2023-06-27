@@ -1,11 +1,12 @@
 import Post from "./components/Post";
+import { PostType } from "./components/Post";
 import Header from "./components/Header";
 import "./styles.css";
 import styles from "./App.module.css";
 import Sidebar from "./components/Sidebar";
 
 const App = () => {
-  const posts = [
+  const posts: PostType[] = [
     {
       id: 1,
       author: {
@@ -20,7 +21,7 @@ const App = () => {
           content:
             "Acabei de subir mais um projeto no meu portifa. É um projeto que fiz no NLW Return, evento da Rocketseat. O nome do projeto é DoctorCare 🚀",
         },
-        { type: "Link", content: "jane.design/doctorcare" },
+        { type: "link", content: "jane.design/doctorcare" },
       ],
       publishedAt: new Date("2023-05-10 20:00:00"),
     },
@@ -52,14 +53,7 @@ const App = () => {
 
         <main>
           {posts.map((posts) => {
-            return (
-              <Post
-                key={posts.id}
-                author={posts.author}
-                content={posts.content}
-                publishedAt={posts.publishedAt}
-              />
-            );
+            return <Post key={posts.id} post={posts} />;
           })}
         </main>
       </div>
