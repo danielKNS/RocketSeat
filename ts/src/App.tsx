@@ -37,7 +37,7 @@ const App = () => {
         {
           type: "paragraph",
           content:
-            "Acabei de subir mais um projeto no meu portifa. É um projeto que fiz no NLW Return, evento da Rocketseat. O nome do projeto é DoctorCare 🚀",
+            "Finalmente finalizei meu novo site/portfólio.Foi um balta desafio todo o desing e codar na unha, mais consigui! ",
         },
         { type: "link", content: "jane.design/doctorcare" },
       ],

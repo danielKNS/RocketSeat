@@ -1,3 +1,4 @@
+/* Defining some variables css that are the colours we use  */
 :root {
   --white: #ffffff;
   --gray-100: #e1e1e6;
@@ -18,6 +19,10 @@
   outline: transparent;
   box-shadow: 0 0 0 2px var(--green-500);
 }
+/* de todos os elementos eu acabo removendo ->
+Margin is the space around an element border.
+padding is the space between the content and the border of an element.
+box-sizing allows usto includethe padding and border in an elemnts total width adn height */
 * {
   margin: 0;
   padding: 0;
