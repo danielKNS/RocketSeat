@@ -4,8 +4,11 @@
   display: flex;
   justify-content: center;
   padding: 1.25rem 0;
+  font-size: 1.55rem;
 }
 
 .header img {
-  height: 2rem;
+  padding-bottom: 0.1rem;
+  height: 3rem;
+  padding-right: 1rem;
 }

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./Sidebar.module.css";
 import { PencilLine } from "@phosphor-icons/react";
 import Avatar from "./Avatar";

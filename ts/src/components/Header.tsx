@@ -5,6 +5,7 @@ const Header = () => {
     <div>
       <header className={styles.header}>
         <img src={igniteLogo} alt="Logotipo do ignite"></img>
+        <strong>Ignite Feed</strong>
       </header>
     </div>
   );
