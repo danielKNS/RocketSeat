@@ -1,0 +1,27 @@
+.wrapper {
+  max-width: 70rem;
+  /* Estamos usando 70rem pq (FIGMA Design) somando quanto que os box vao usar de espaco. 1120 / 16 = 70 */
+  margin: 2rem auto;
+  /* 2rem em cima e embaixo, e as laterais vai ficar auto, vai fazer que fica centralizado ne tela.  */
+  padding: 0 1rem;
+  /* isso aqui vai fazer que se eu diminua a tela para um tamanho menor de 70rem, o conteudo NÃO fica colado nas laterais.
+   Ele tem um espaçamento entre as laterais de 16px. */
+  display: grid;
+  grid-template-columns: 256px 1fr;
+  /* Aqui eu estou falando, com a minha primeira coluna(sidebar) a largura fixa é 256px e a segunda coluna que é o nosso conteudo(post)
+   esse vai se-adapitar pra quanto couber na tela. 1fr que é a unidade que usamos do grid pra dizer ter um tamanho flexivo*/
+  gap: 2rem;
+  /* Aqui estou ponto um gap estre as colunas de 32px (FIGMA) 1rem = 16px */
+  align-items: flex-start;
+  /* Aqui esta fazendo que o sidebar mais nossos posts SEMPRE FICA ALINHADOS PRO TOPO. 
+  Se não fazer isso o sitebar vai esticar no mesmo altura do que post */
+}
+/* // fixing the style/grid for mobile devices */
+@media (max-width: 768px) {
+  html {
+    font-size: 87.5%;
+  }
+  .wrapper {
+    grid-template-columns: 1fr;
+  }
+}
