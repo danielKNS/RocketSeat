@@ -4,21 +4,24 @@
   padding: 2.5rem;
 }
 
-/* // this effect not the original/the first post but the second post does automaticaly  */
+/* // this effect not the original/first post but the second post
+ Aqui estou estilizando e aplicando todos posts para ter espaço do post anterior (ACIMA) ^  */
 .post + .post {
   margin-top: 2rem;
 }
 
+/* Estilizando o conteudo post */
 .content {
   line-height: 1.6;
   color: var(--gray-300);
   margin-top: 1.5rem;
 }
-
+/* Estilizando o parágrafo do post */
 .content p {
   margin-top: 1rem;
 }
 
+/* Estilizando a link do post */
 .content a {
   font-weight: bold;
   color: var(--green-500);
@@ -29,10 +32,15 @@
   color: var(--green-300);
 }
 
+/* Ó > basicamente esta falando que vocé quer editar/modificar todos
+  quem tem tag header pq assim o css vai buscar apenas as tags headers
+  que estão no primeiro nivel do post. Linha 54 em Post.jsx. */
 .post > header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  /* justify-content vai fazer que o publicado fica totalmente na direita
+   e o restante fica totalmente na esquerda */
 }
 
 .post > header time {
