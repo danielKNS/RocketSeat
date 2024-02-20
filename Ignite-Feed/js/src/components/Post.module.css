@@ -43,24 +43,34 @@
    e o restante fica totalmente na esquerda */
 }
 
+/* Editando o tag time em linha 68 em Post.jsx */
 .post > header time {
   font-size: 0.875rem;
   color: var(--gray-400);
 }
 
+/* Editando o nome/detalhes do usuario */
 .author {
   display: flex;
   align-items: center;
   gap: 1rem;
+  /* Aqui esta fazendo que os info do usuario fica na direita da 
+  image centralizados e dando uma gap entre o nome + role e image */
 }
 
-.authorInfo {
+/* Editando o nome e o role */
+/* .authorInfo {
   display: flex;
-  flex-direction: column;
-}
+  flex-direction: column; */
+  /* para forçar que eles sempre fiquem um debaixo do outro*/ 
+/* } */
+
+    /* OU seu eu não quero usar display flex Faço isto abaixo */
 
 .authorInfo strong {
   display: block;
+  /* display block faz eles forçar quebre a linha(
+    não deixando eles na mesma linha) */
   color: var(--gray-100);
   line-height: 1.6;
 }
