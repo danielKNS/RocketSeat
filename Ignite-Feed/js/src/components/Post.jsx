@@ -52,7 +52,11 @@ const Post = ({ author, publishedAt, content }) => {
 
   return (
     <article className={styles.post}>
+      {/* Aqui embaixo é o cabeçalho que contem as info do usuario +
+      a data de publicação */}
       <header>
+          {/* O avatar e outros estão em um div diferente para não ter
+          dificuldade para alinhar */}
         <div className={styles.author}>
           <Avatar hasBorder src={author.avatarUrl} />
           <div className={styles.authorInfo}>
@@ -69,6 +73,7 @@ const Post = ({ author, publishedAt, content }) => {
         </time>
       </header>
 
+        {/* Aqui embaixo é o conteudo do post */}
       <div className={styles.content}>
         {content.map((line) => {
           if (line.type === "paragraph") {
