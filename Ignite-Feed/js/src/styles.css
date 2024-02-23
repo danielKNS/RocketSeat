@@ -13,7 +13,9 @@
 
   --red-500: #f75a68;
 }
-/* here we are chaging to our personal focus in the our website */
+/* here we are chaging to our personal focus in the our website
+  Doing so everytime our curser focus at the comment/like it will have 
+  a green bar arount it */
 :focus {
   outline: transparent;
   box-shadow: 0 0 0 2px var(--green-500);
