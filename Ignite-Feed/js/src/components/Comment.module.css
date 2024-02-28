@@ -4,12 +4,15 @@
   gap: 1rem;
 }
 
+/* ">" Selecionando a primeira imagin em Comment.jsx */
 .comment > img {
   width: 3rem;
   height: 3rem;
   border-radius: 8px;
 }
 
+/* Aqui esta fazendo que a div perto do avatar pega todas as informacoes
+e ocupa o maximo de espaco possivel */
 .commentBox {
   flex: 1;
 }
@@ -26,6 +29,7 @@
   justify-content: space-between;
 }
 
+/* Os dois debaixo é o tempo que o comment foi publicado */
 .authorAndTime strong {
   display: block;
   font-size: 0.875rem;
@@ -45,6 +49,12 @@
   color: var(--gray-400);
   cursor: pointer;
   line-height: 0;
+
+  /* Lembrando que a altura de bottom não é definida pelo
+  o conteudo do bottom. O icon pode ate fazer o button crecer
+  mais como que o icon não esta ocupando altura suficiente
+  o bottom sempre segue a altura dele pelo Line-Height. 
+  */
   border-radius: 2px;
 }
 
