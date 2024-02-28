@@ -26,6 +26,10 @@ e ocupa o maximo de espaco possivel */
 .commentContent header {
   display: flex;
   align-items: flex-start;
+  
+  /* flex-start esta ajudando com o bottom nao ficar no centro junto 
+  com o avatar + name etc... */
+
   justify-content: space-between;
 }
 
@@ -55,7 +59,7 @@ e ocupa o maximo de espaco possivel */
   mais como que o icon não esta ocupando altura suficiente
   o bottom sempre segue a altura dele pelo Line-Height. 
   */
-  
+
   border-radius: 2px;
 }
 
