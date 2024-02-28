@@ -40,6 +40,7 @@ const Comment = ({ content, deleteComment }) => {
             <ThumbsUp />
             Like
             <span>{likeCount}</span>
+            {/* Span deixa mais facil para estilizar o button. */}
           </button>
         </footer>
       </div>
